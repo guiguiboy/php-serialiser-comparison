@@ -1,0 +1,20 @@
+{
+    "name": "guiguiboy/php-serializer-perf-comparison",
+    "type": "project",
+    "require": {
+        "jms/serializer": "^1.12",
+        "symfony/yaml": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Package\\": "src/Vendor/Package/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "guiguiboy",
+            "email": "guillaume.bretou@gmail.com"
+        }
+    ]
+}

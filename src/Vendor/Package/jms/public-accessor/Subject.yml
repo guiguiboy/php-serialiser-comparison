@@ -1,0 +1,16 @@
+Vendor\Package\Subject:
+  access_type: public_method
+  properties:
+    id:
+      type: int
+    name:
+      type: string
+    description:
+      type: string
+    content:
+      type: string
+    createdAt:
+      type: DateTime<'Y-m-d'>
+    isEnabled:
+      type: bool
+      property: isEnabled
