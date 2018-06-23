@@ -1,5 +1,4 @@
 Vendor\Package\Subject:
-  access_type: public_method
   properties:
     id:
       type: int
@@ -14,3 +13,5 @@ Vendor\Package\Subject:
     isEnabled:
       type: bool
       property: isEnabled
+    isPurchasable:
+      type: bool

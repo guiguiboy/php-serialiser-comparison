@@ -18,9 +18,14 @@ class Subject
 
     protected $content;
 
+    /**
+     * @var \DateTime
+     */
     protected $createdAt;
 
     protected $isEnabled;
+
+    protected $isPurchasable;
 
     /**
      * @return mixed
@@ -87,17 +92,17 @@ class Subject
     }
 
     /**
-     * @return mixed
+     * @return \DateTime
      */
-    public function getCreatedAt()
+    public function getCreatedAt(): \DateTime
     {
         return $this->createdAt;
     }
 
     /**
-     * @param mixed $createdAt
+     * @param \DateTime $createdAt
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
     }
@@ -118,5 +123,20 @@ class Subject
         $this->isEnabled = $isEnabled;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getisPurchasable()
+    {
+        return $this->isPurchasable;
+    }
+
+    /**
+     * @param mixed $isPurchasable
+     */
+    public function setIsPurchasable($isPurchasable)
+    {
+        $this->isPurchasable = $isPurchasable;
+    }
 
 }

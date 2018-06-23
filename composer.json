@@ -3,7 +3,10 @@
     "type": "project",
     "require": {
         "jms/serializer": "^1.12",
-        "symfony/yaml": "^4.1"
+        "symfony/yaml": "^4.1",
+        "symfony/serializer": "^4.1",
+        "symfony/property-access": "^4.1",
+        "symfony/property-info": "^4.1"
     },
     "autoload": {
         "psr-4": {

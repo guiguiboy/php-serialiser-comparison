@@ -17,19 +17,27 @@ $builder =
         ->setDebug(true);
 
 if (isset($_SERVER['argv'][1]) &&  $_SERVER['argv'][1] === '--public-accessor') {
-    $builder->addMetadataDir('./src/Vendor/Package/jms/public-accessor', 'Vendor\Package');
+    $builder->addMetadataDir('./src/Vendor/Package/Jms/public-accessor', 'Vendor\Package');
 } else {
-    $builder->addMetadataDir('./src/Vendor/Package/jms/reflection', 'Vendor\Package');
+    $builder->addMetadataDir('./src/Vendor/Package/Jms/reflection', 'Vendor\Package');
 }
+
+$builder
+    ->configureListeners(function(JMS\Serializer\EventDispatcher\EventDispatcher $dispatcher) {
+        $dispatcher->addSubscriber(new \Vendor\Package\Jms\JmsEventSubscriber());
+    })
+;
 
 $serializer = $builder->build();
 
 $start = microtime(true);
 for ($i = 0; $i<= 10000; $i++)
 {
-    $t = $serializer->deserialize($json, 'Vendor\\Package\\Subject', 'json');
+    $t = $serializer->deserialize($json, \Vendor\Package\Subject::class, 'json');
 }
 $end = microtime(true);
+
+var_dump($t);
 
 echo "done : " . ($end - $start) . "\n";
 
